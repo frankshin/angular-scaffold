@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>独立构建的最轻最简angular5脚手架</title>
+    <style>
+        #test{font-size: 50px;margin: 20px;}
+    </style>
+  </head>
+  <body>
+      <div id="test"></div>
+      <div id="error"></div>
+  </body>
+  <script src="dist/bundle.js?v=3"></script>
+  <script>
+        window.onerror = function(msg, url){
+            var mesg = msg + '||' + url;
+            showSomeTips(mesg);
+        }
+        // showSomeTips(window.Promise);
+        // mesg 需显示在页面的消息
+        function showSomeTips(mesg){
+            var error = document.getElementById('error');
+            var dom = document.createElement('div');
+            dom.innerHTML = mesg;
+            error.appendChild(dom);
+        }
+    </script>
+</html>
