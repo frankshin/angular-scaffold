@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
+
 module.exports = {
     mode: "production",
     entry: './src/app/main.ts',
