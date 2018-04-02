@@ -1,24 +1,25 @@
+/**
+ * others
+ */
 var path = require('path');
-var webpack = require('webpack');
+var webpackMerge = require('webpack-merge');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-module.exports = {
-    mode: "development",
-    entry: './src/app/main.ts',
-    resolve: {
-       extensions: ['.ts', '.js']
-    },
+/**
+ * files
+ */
+var commonConfig = require('./webpack.common.js');
+
+
+module.exports = webpackMerge(commonConfig, {
     output: {
-       path: path.resolve(__dirname, 'dist'),
-       filename: 'bundle.js'
+        // path: helpers.root('dist'), // 虽然我们告诉Webpack把输出包放到dist目录，但实际上开发服务器把这些包都放在了内存里，而不会把它们写到硬盘中。 所以在dist目录下是找不到任何文件的(至少现在这个开发环境下构建时没有)
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+        chunkFilename: '[id].chunk.js'
     },
     module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                loader: "ts-loader"
-            }
-        ]
+        rules: []
     },
     plugins: [
         new BundleAnalyzerPlugin({
