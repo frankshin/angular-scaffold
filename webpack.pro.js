@@ -1,23 +1,21 @@
+/**
+ * others
+ */
 var path = require('path');
-var webpack = require('webpack');
+var webpackMerge = require('webpack-merge');
+/**
+ * files
+ */
+var commonConfig = require('./webpack.common.js');
 
-
-module.exports = {
+module.exports = webpackMerge(commonConfig, {
     mode: "production",
-    entry: './src/app/main.ts',
-    resolve: {
-       extensions: ['.ts', '.js']
-    },
     output: {
-       path: path.resolve(__dirname, 'dist'),
-       filename: 'bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+        chunkFilename: '[id].chunk.js'
     },
     module: {
-        rules: [
-            {
-                test: /\.tsx?$/, 
-                loader: "ts-loader"
-            },
-        ]
+        rules: []
     }
-};
+});

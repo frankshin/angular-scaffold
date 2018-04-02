@@ -30,7 +30,7 @@
     "@angular/language-service": "^5.2.0",
     "@types/node": "~6.0.60",
     "html-webpack-plugin": "^3.1.0",
-    "ts-loader": "^4.4.1",
+    "ts-loader": "^4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3",
     "webpack": "^4.1.0",
