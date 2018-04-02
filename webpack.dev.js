@@ -32,6 +32,10 @@ module.exports = {
             statsFilename: 'stats.json',
             statsOptions: null,
             logLevel: 'info'
+        }),
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            inject: true
         })
     ]
 };
