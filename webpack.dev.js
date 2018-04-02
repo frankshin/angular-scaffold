@@ -37,5 +37,10 @@ module.exports = {
             template: './index.html',
             inject: true
         })
-    ]
-};
+    ],
+    devServer: {
+        devServer: {
+            contentBase: './dist'
+        },
+    }
+});
