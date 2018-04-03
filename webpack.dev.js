@@ -4,28 +4,25 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 /**
  * others
  */
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
+    mode: 'development',
     entry: {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor_ng.ts', // 第三方依赖，如Angular、lodash和bootstrap.cs
         'app': './src/main.ts'
     },
+    devtool: 'inline-source-map',
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js']  // 自动补全识别后缀
     },
     devServer: {
         contentBase: './dist'
-    },
-    output: {
-        // 虽然我们告诉Webpack把输出包放到dist目录，但实际上开发服务器把这些包都放在了内存里，而不会把它们写到硬盘中。 所以在dist目录下是找不到任何文件的(至少现在这个开发环境下构建时没有)
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
-        chunkFilename: '[id].chunk.js'
     },
     module: {
         rules: [
@@ -49,6 +46,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: './index.html',
             inject: true
@@ -65,5 +63,11 @@ module.exports = {
             statsOptions: null,
             logLevel: 'info'
         })
-    ]
+    ],
+    output: {
+        // 虽然我们告诉Webpack把输出包放到dist目录，但实际上开发服务器把这些包都放在了内存里，而不会把它们写到硬盘中。 所以在dist目录下是找不到任何文件的(至少现在这个开发环境下构建时没有)
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+        chunkFilename: '[id].chunk.js'
+    }
 };
