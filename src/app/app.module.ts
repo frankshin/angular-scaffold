@@ -1,10 +1,13 @@
+
 /**
  * 
- * others
+ * modules
  * 
  */
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 /**
  * components
@@ -14,10 +17,12 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+      AppComponent
   ],
   imports: [
-    BrowserModule
+      NgModule,
+      HttpClientModule,
+      BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
