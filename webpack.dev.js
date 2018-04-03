@@ -1,16 +1,23 @@
 /**
- * others
+ * webpack
  */
 var path = require('path');
-var webpackMerge = require('webpack-merge');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 /**
- * files
+ * others
  */
-var commonConfig = require('./webpack.common.js');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-
-module.exports = webpackMerge(commonConfig, {
+module.exports = {
+    entry: {
+        'polyfills': './src/polyfills.ts',
+        'vendor': './src/vendor.ts', // 第三方依赖，如Angular、lodash和bootstrap.cs
+        'app': './src/main.ts'
+    },
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
     devServer: {
         contentBase: './dist'
     },
@@ -21,9 +28,31 @@ module.exports = webpackMerge(commonConfig, {
         chunkFilename: '[id].chunk.js'
     },
     module: {
-        rules: []
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader"
+            },
+            {
+                test: /\.html$/,
+                use: [ {
+                    loader: 'html-loader',
+                    options: {
+                        minimize: false
+                    }
+                }],
+            },
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+            }
+        ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            inject: true
+        }),
         new BundleAnalyzerPlugin({
             analyzerMode: 'server',
             analyzerHost: '127.0.0.1',
@@ -37,4 +66,4 @@ module.exports = webpackMerge(commonConfig, {
             logLevel: 'info'
         })
     ]
-});
+};
