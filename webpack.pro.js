@@ -1,9 +1,10 @@
 /**
  * others
  */
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = webpackMerge(commonConfig, {
@@ -18,8 +19,8 @@ module.exports = webpackMerge(commonConfig, {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
-        chunkFilename: '[id].chunk.js'
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].chunk.js'
     },
     module: {
         rules: [
@@ -43,9 +44,10 @@ module.exports = webpackMerge(commonConfig, {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: './index.html',
             inject: true
         })
     ]
-});
+};
