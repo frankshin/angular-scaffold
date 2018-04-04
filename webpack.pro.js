@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = {
     mode: "production",
     entry: {
         'polyfills': './src/polyfills.ts',
