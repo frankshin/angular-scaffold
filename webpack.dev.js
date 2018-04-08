@@ -48,7 +48,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './src/index.html',
             inject: true
         }),
         new BundleAnalyzerPlugin({
