@@ -1,16 +1,17 @@
 /**
  * others
  */
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = {
     mode: "production",
     entry: {
         'polyfills': './src/polyfills.ts',
-        'vendor': './src/vendor.ts', // 第三方依赖，如Angular、lodash和bootstrap.cs
+        'vendor': './src/vendor_ng.ts', // 第三方依赖，如Angular、lodash和bootstrap.cs
         'app': './src/main.ts'
     },
     resolve: {
@@ -18,8 +19,8 @@ module.exports = webpackMerge(commonConfig, {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
-        chunkFilename: '[id].chunk.js'
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].chunk.js'
     },
     module: {
         rules: [
@@ -43,9 +44,10 @@ module.exports = webpackMerge(commonConfig, {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './src/index.html',
             inject: true
         })
     ]
-});
+};
