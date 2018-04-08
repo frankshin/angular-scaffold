@@ -1,10 +1,10 @@
 
+import { NgModule } from '@angular/core';
 /**
  * 
  * modules
  * 
  */
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +20,6 @@ import { AppComponent } from './app.component';
       AppComponent
   ],
   imports: [
-      NgModule,
       HttpClientModule,
       BrowserModule
   ],
