@@ -1,3 +1,11 @@
+/**
+ * @author [small pang]
+ * @email [xudengwei.com]
+ * @create date 2018-04-17 02:30:56
+ * @modify date 2018-04-17 02:30:56
+ * @desc [description]
+*/
+
 import { Component } from '@angular/core';
 /**
  * files
