@@ -22,7 +22,11 @@ module.exports = {
         extensions: ['.ts', '.js']  // 自动补全识别后缀
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true,
+        compress: true,
+        inline: true,
+        port: 8001
     },
     module: {
         rules: [
@@ -46,6 +50,8 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: './src/index.html',
