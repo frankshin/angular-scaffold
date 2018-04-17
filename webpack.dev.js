@@ -4,7 +4,6 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 /**
  * others
  */
@@ -52,7 +51,6 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: true
@@ -73,10 +71,6 @@ module.exports = {
          * 
         WARNING in ./node_modules/@angular/core/esm5/core.js
         6558:15-36 Critical dependency: the request of a dependency is an expression
-        @ ./node_modules/@angular/core/esm5/core.js
-        @ ./src/app/app.module.ts
-        @ ./src/main.ts
-        @ multi (webpack)-dev-server/client?http://localhost:8001 ./src/main.ts
         */
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core/,
