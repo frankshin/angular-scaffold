@@ -11,7 +11,7 @@ const appComponnetCss = require('./app.component.css');
     styles: [String(appComponnetCss)]
 })
 export class AppComponent {
-    title = 'app';
+    title = '一个轻量的angular5脚手架demo';
     constructor(){}
     
     test() {

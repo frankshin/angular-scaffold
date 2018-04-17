@@ -1,22 +1,12 @@
-/* Application-wide Styles */
-h1 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
-  }
-  h2, h3 {
-    color: #444;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-  body {
-    margin: 2em;
-  }
-  body, input[text], button {
-    color: #888;
-    font-family: Cambria, Georgia;
-  }
-  /* everywhere else */
-  * {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+
+/* reset css */
+body,h1,h2,h3,h4,h5,h6,input,button,ul,li,p,table,tr,td{margin:0;padding:0;}
+body{background:#FFF;color:#303032;font-size:14px;-webkit-text-size-adjust: 100%;}
+a:active,input:focus,button:focus,textarea:focus,select:focus{outline:0;}
+a{text-decoration:none;}
+input,textarea{border:1px solid #C9CACE;border-radius:0.178571428em;box-sizing:border-box;font-size:1em;
+padding:0.571428em 0.428571em;color:#949494;-webkit-appearance:none;}
+input:disabled{background-color:#c4c5c6!important;border-color:#c4c5c6!important;color:white!important;-webkit-appearance:none;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#c9cace;}
+li{list-style-type:none;}
+a,button,input{-webkit-tap-highlight-color:rgba(255,255,255,0);}
