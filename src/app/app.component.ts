@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+/**
+ * files
+ */
+const appComponnetHtml = require('./app.component.html');
+const appComponnetCss = require('./app.component.css');
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    template: appComponnetHtml,
+    styles: [String(appComponnetCss)]
 })
 export class AppComponent {
     title = 'app';
