@@ -14,12 +14,14 @@ import { AppRoutingModule } from './app-routing.module';
  */
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index-list/index.component';
+import { AboutComponent } from './about/about-list/about.component';
 
 
 @NgModule({
   declarations: [
       AppComponent,
-      IndexComponent
+      IndexComponent,
+      AboutComponent
   ],
   imports: [
       HttpClientModule,

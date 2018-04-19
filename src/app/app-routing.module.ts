@@ -5,11 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
  * components
  */
 import { IndexComponent } from './index/index-list/index.component';
+import { AboutComponent } from './about/about-list/about.component';
 
 
 const routes: Routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
-    { path: 'index', component: IndexComponent }
+    { path: 'index', component: IndexComponent },
+    { path: 'about', component: AboutComponent }
 ];
 
 
