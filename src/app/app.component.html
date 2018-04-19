@@ -2,10 +2,13 @@
 <div>
     <div>Welcome to {{ title }}!</div>
     <ul class="nav">
-        <li>进入首页</li>
-        <li>关于demo</li>
+        <li>
+            <a routerLink="/index">进入首页</a>
+        </li>
+        <li>
+            <a routerLink="/about">关于</a>
+        </li>
     </ul>
+    <!-- router view -->
+    <router-outlet></router-outlet>
 </div>
-  
-
-  
