@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
 /**
  * files
@@ -12,6 +12,17 @@ const indexComponnetCss = require('./index.component.css');
     styles: [String(indexComponnetCss)]
 })
 
-export class IndexComponent {
-    //
+export class IndexComponent implements OnInit{
+    navs: Array<string> = ['首页', 'angular5', 'react', 'vue', 'webpack', 'nodejs'];
+
+    ngOnInit() {
+        console.log('执行了');
+    }
+    /**
+     * 
+     * 测试mouse hover的监听
+     */
+    test() {
+        console.error('dfdsfdsf');
+    }
 }

@@ -1,10 +1,8 @@
 <div class="index_container">
     <ul>
-        <li>首页</li>
-        <li>angular5</li>
-        <li>react</li>
-        <li>vue</li>
-        <li>webpack</li>
-        <li>nodejs</li>
+        <li *ngFor="let nav of navs">
+            {{nav}}
+            <span>{{test()}}</span>
+        </li>
     </ul>
 </div>
