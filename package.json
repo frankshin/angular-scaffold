@@ -19,12 +19,14 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "core-js": "^2.5.4",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.5",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.25"
   },
   "devDependencies": {
     "@angular/language-service": "^5.2.0",
+    "@types/jquery": "^3.3.5",
     "@types/node": "^9.6.2",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
