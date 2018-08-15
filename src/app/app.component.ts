@@ -1,10 +1,11 @@
 /**
  * @author [small pang]
  * @email [xudengwei.com]
- * @create date 2018-04-17 02:30:56
- * @modify date 2018-04-17 02:30:56
+ * @create date 2018-08-08 03:30:57
+ * @modify date 2018-08-08 03:30:57
  * @desc [description]
 */
+
 
 import { Component } from '@angular/core';
 @Component({
@@ -20,8 +21,6 @@ export class AppComponent {
         console.log('成功了吗');
     }
 }
-
-
 
 // import { Component } from '@angular/core';
 // const appComponnetHtml = require('./app.component.html');
